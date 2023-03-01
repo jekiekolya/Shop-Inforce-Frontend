@@ -9,11 +9,11 @@ import {
   REHYDRATE,
 } from 'redux-persist/es/constants';
 
-import { persistedAuthReducer } from './auth/authSlice';
+import { persistedProductsReducer } from './products/productsSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: persistedAuthReducer,
+    products: persistedProductsReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
