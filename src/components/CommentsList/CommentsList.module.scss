@@ -1,0 +1,39 @@
+.commentsWrapper {
+  margin-top: 50px;
+  min-height: 200px;
+
+  padding: 20px;
+
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.titleComments {
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.listComments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemComment {
+
+  padding: 5px 10px;
+
+  background: var(--text-green-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+.description {
+  font-size: 18px;
+}
+
+.date {
+  font-size: 12px;
+
+  text-align: right;
+}
