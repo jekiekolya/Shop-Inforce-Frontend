@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkShop_Inforce_Frontend=self.webpackChunkShop_Inforce_Frontend||[]).push([[256],{9256:function(n,e,r){r.r(e),r.d(e,{default:function(){return t}});var o=r(3329);function t(){return(0,o.jsx)("h2",{style:{color:"red"},children:"NotFound"})}}}]);
+//# sourceMappingURL=256.76b71649.chunk.js.map
