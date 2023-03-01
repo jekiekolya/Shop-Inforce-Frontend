@@ -3,6 +3,7 @@ import { useState } from 'react';
 
 // Redux
 import { useDispatch } from 'react-redux';
+import productsOperations from 'redux/products/productsOperations';
 
 // Libraries
 import { Notify } from 'notiflix';
@@ -20,7 +21,7 @@ export default function AddProductForm() {
   const [productWeight, setProductWeight] = useState('');
 
   // Dispatch
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // handlers
   const handleOnChangeFile = e => {
@@ -73,8 +74,7 @@ export default function AddProductForm() {
       return;
     }
 
-    console.log('dataForm', dataForm);
-    // dispatch(dataForm);
+    dispatch(productsOperations.addProduct(dataForm));
   };
 
   return (

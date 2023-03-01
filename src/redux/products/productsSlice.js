@@ -27,13 +27,13 @@ export const financeSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(addProduct.pending, handlePending)
-      .addCase(addProduct.rejected, handleRejected)
-      .addCase(addProduct.fulfilled, (state, action) => {
-        state.data = action.payload.rdyTransactions;
-        state.totalBalance = action.payload.totalBalance;
-        state.totalQuantityTransactions = action.payload.updatedCount;
-        state.isLoading = false;
-      });
+      .addCase(addProduct.rejected, handleRejected);
+    // .addCase(addProduct.fulfilled, (state, action) => {
+    //   state.data = action.payload.rdyTransactions;
+    //   state.totalBalance = action.payload.totalBalance;
+    //   state.totalQuantityTransactions = action.payload.updatedCount;
+    //   state.isLoading = false;
+    // });
   },
 });
 
