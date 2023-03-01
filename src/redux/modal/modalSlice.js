@@ -19,4 +19,4 @@ const modalSlice = createSlice({
 });
 
 export const modalReducer = modalSlice.reducer;
-export const { toggleShowModalAddTransaction } = modalSlice.actions;
+export const { toggleShowModalAddProduct } = modalSlice.actions;

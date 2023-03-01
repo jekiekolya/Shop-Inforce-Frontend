@@ -3,19 +3,31 @@ import { useEffect } from 'react';
 
 // Redux
 import { useDispatch } from 'react-redux';
-import { toggleShowModalAddTransaction } from 'redux/modal/modalSlice';
+import { toggleShowModalAddProduct } from 'redux/modal/modalSlice';
 
 // Components
 import ModalUniversal from '../ModalUniversal/ModalUniversal';
+import AddProductForm from '../../AddProductForm/AddProductForm';
 
 // Styles
-import s from './ModalAddProduct.module.scss';
+// import s from './ModalAddProduct.module.scss';
 
-const ModalAddTransaction = () => {
+const ModalAddProduct = () => {
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    document.addEventListener('keydown', escKeyDown);
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.removeEventListener('keydown', escKeyDown);
+      document.body.style.overflow = '';
+    };
+  });
+
+  // handlers
   const handleCloseModal = () => {
-    dispatch(toggleShowModalAddTransaction(false));
+    dispatch(toggleShowModalAddProduct(false));
   };
 
   const handleBackdropClick = e => {
@@ -30,21 +42,11 @@ const ModalAddTransaction = () => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('keydown', escKeyDown);
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.removeEventListener('keydown', escKeyDown);
-      document.body.style.overflow = '';
-    };
-  });
-
   return (
     <ModalUniversal onClose={handleCloseModal} onClick={handleBackdropClick}>
-      <div></div>
+      <AddProductForm />
     </ModalUniversal>
   );
 };
 
-export default ModalAddTransaction;
+export default ModalAddProduct;

@@ -1,3 +1,5 @@
+@import '../../../assets/styles/index.scss';
+
 .modal__backdrop {
   position: fixed;
   top: 0;
@@ -11,7 +13,7 @@
   }
 
   @include mq(tab) {
-    background: #a0a0a0;
+    background: #a0a0a02c;
     overflow: auto;
     display: flex;
     justify-content: center;
@@ -35,14 +37,14 @@
   @include mq(mob-only) {
     width: 100vw;
  
-    padding: 20px 11px 37px 9px;
+    padding: 20px 10px 20px 10px;
     margin-top: 60px;
     height: 100dvh;
   }
 
   @include mq(tab) {
     width: 540px;
-    padding: 40px 73px 60px 73px;
+    padding: 40px 73px 40px 73px;
     align-items: center;
     border-radius: 15px;
     animation: scaleTitle 0.3s ease 1 alternate;
@@ -85,14 +87,11 @@
   transition: transform 0.5s;
 
   &:hover {
-    fill: #16c207;
+    fill: #e92415;
     border-radius: 100%;
-    border: 1px solid #17c2079c;
-    transform: rotate(360deg);
+    
+    transform: rotate(180deg);
     opacity: 1;
-    box-shadow: 0 0 1px 5px (var(--main-accent-color, 0.4)),
-      0 0 1px 10px (var(--main-accent-color, 0.1)),
-      0 0 1px 15px (var(--main-accent-color, 0.1));
   }
 
   &:active {
@@ -102,7 +101,6 @@
   &__icon {
     width: 16px;
     height: 16px;
-    fill: var(--main-accent-color);
     display: block;
   }
 }
