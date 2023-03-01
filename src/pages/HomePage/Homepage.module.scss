@@ -1,7 +1,35 @@
 @import '../../assets/styles/index.scss';
 
+.titleWrapper {
+  position: relative;
+}
+
 .title {
   padding: 30px 0px;
-  
+
   text-align: center;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  margin-bottom: 20px;
+  padding: 13px 94px;
+
+  height: 50px;
+
+  transform: translateY(-50%);
+
+  background-color: var(--text-green-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:active {
+    background-color: rgb(35, 179, 147);
+  }
 }

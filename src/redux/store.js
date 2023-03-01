@@ -10,10 +10,12 @@ import {
 } from 'redux-persist/es/constants';
 
 import { persistedProductsReducer } from './products/productsSlice';
+import { modalReducer } from './modal/modalSlice';
 
 export const store = configureStore({
   reducer: {
     products: persistedProductsReducer,
+    modal: modalReducer,
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

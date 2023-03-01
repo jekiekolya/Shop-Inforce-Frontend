@@ -9,7 +9,10 @@ const HomePage = () => {
   return (
     <PageWrapper>
       <div>
-        <h1 className={s.title}>Products</h1>
+        <div className={s.titleWrapper}>
+          <h1 className={s.title}>Products</h1>
+          <button className={s.button}>Add Product</button>
+        </div>
         <ProductList />
       </div>
     </PageWrapper>
