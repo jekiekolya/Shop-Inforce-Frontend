@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Inforce-Shop/static/css/main.67088759.css",
-    "main.js": "/Inforce-Shop/static/js/main.3509e662.js",
-    "static/css/615.eef4a64e.chunk.css": "/Inforce-Shop/static/css/615.eef4a64e.chunk.css",
-    "static/js/615.7733d11c.chunk.js": "/Inforce-Shop/static/js/615.7733d11c.chunk.js",
-    "static/css/689.c0f62e4e.chunk.css": "/Inforce-Shop/static/css/689.c0f62e4e.chunk.css",
-    "static/js/689.0fc88cc4.chunk.js": "/Inforce-Shop/static/js/689.0fc88cc4.chunk.js",
-    "static/js/256.bf7b5883.chunk.js": "/Inforce-Shop/static/js/256.bf7b5883.chunk.js",
-    "static/media/logo.png": "/Inforce-Shop/static/media/logo.acb7ed5ae91ac1629793.png",
-    "index.html": "/Inforce-Shop/index.html",
-    "main.67088759.css.map": "/Inforce-Shop/static/css/main.67088759.css.map",
-    "main.3509e662.js.map": "/Inforce-Shop/static/js/main.3509e662.js.map",
-    "615.eef4a64e.chunk.css.map": "/Inforce-Shop/static/css/615.eef4a64e.chunk.css.map",
-    "615.7733d11c.chunk.js.map": "/Inforce-Shop/static/js/615.7733d11c.chunk.js.map",
-    "689.c0f62e4e.chunk.css.map": "/Inforce-Shop/static/css/689.c0f62e4e.chunk.css.map",
-    "689.0fc88cc4.chunk.js.map": "/Inforce-Shop/static/js/689.0fc88cc4.chunk.js.map",
-    "256.bf7b5883.chunk.js.map": "/Inforce-Shop/static/js/256.bf7b5883.chunk.js.map"
+    "main.css": "/Shop-Inforce-Frontend/static/css/main.67088759.css",
+    "main.js": "/Shop-Inforce-Frontend/static/js/main.1f4148ed.js",
+    "static/css/615.eef4a64e.chunk.css": "/Shop-Inforce-Frontend/static/css/615.eef4a64e.chunk.css",
+    "static/js/615.d7ae8be5.chunk.js": "/Shop-Inforce-Frontend/static/js/615.d7ae8be5.chunk.js",
+    "static/css/689.c0f62e4e.chunk.css": "/Shop-Inforce-Frontend/static/css/689.c0f62e4e.chunk.css",
+    "static/js/689.01f7090f.chunk.js": "/Shop-Inforce-Frontend/static/js/689.01f7090f.chunk.js",
+    "static/js/256.6764fb25.chunk.js": "/Shop-Inforce-Frontend/static/js/256.6764fb25.chunk.js",
+    "static/media/logo.png": "/Shop-Inforce-Frontend/static/media/logo.acb7ed5ae91ac1629793.png",
+    "index.html": "/Shop-Inforce-Frontend/index.html",
+    "main.67088759.css.map": "/Shop-Inforce-Frontend/static/css/main.67088759.css.map",
+    "main.1f4148ed.js.map": "/Shop-Inforce-Frontend/static/js/main.1f4148ed.js.map",
+    "615.eef4a64e.chunk.css.map": "/Shop-Inforce-Frontend/static/css/615.eef4a64e.chunk.css.map",
+    "615.d7ae8be5.chunk.js.map": "/Shop-Inforce-Frontend/static/js/615.d7ae8be5.chunk.js.map",
+    "689.c0f62e4e.chunk.css.map": "/Shop-Inforce-Frontend/static/css/689.c0f62e4e.chunk.css.map",
+    "689.01f7090f.chunk.js.map": "/Shop-Inforce-Frontend/static/js/689.01f7090f.chunk.js.map",
+    "256.6764fb25.chunk.js.map": "/Shop-Inforce-Frontend/static/js/256.6764fb25.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67088759.css",
-    "static/js/main.3509e662.js"
+    "static/js/main.1f4148ed.js"
   ]
 }
