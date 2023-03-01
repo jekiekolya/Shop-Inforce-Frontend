@@ -1,8 +1,8 @@
 {
-  "name": "Inforce-Shop",
+  "name": "Shop-Inforce-Frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jekiekolya.github.io/Inforce-Shop/",
+  "homepage": "https://jekiekolya.github.io/Shop-Inforce-Frontend/",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
