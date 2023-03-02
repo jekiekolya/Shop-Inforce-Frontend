@@ -3,17 +3,18 @@ import React from 'react';
 
 // // Components
 // import ModalUniversal from '../ModalUniversal/ModalUniversal';
-// import EditProductForm from 'components/EditProductForm/EditProductForm';
+import EditProductForm from 'components/EditProductForm/EditProductForm';
 
-// // Styles
-// import s from './ModalEditProduct.module.scss';
+// Styles
+import s from './ModalEditProduct.module.scss';
 
 export default function ModalEditProduct({ product }) {
   return (
-    <div>sasd</div>
     // <ModalUniversal toggleAction={toggleShowModalEditProduct}>
-    //   <h2 className={s.title}>Edit Product</h2>
-    //   <EditProductForm product={product} />
+    <>
+      <h2 className={s.title}>Edit Product</h2>
+      <EditProductForm product={product} />
+    </>
     // </ModalUniversal>
   );
 }
