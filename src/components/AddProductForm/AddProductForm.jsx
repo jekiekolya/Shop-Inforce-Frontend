@@ -2,11 +2,15 @@
 import { useState } from 'react';
 
 // Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import productsOperations from 'redux/products/productsOperations';
+import { productsSelectors } from 'redux/products/productsSelectors';
 
 // Libraries
 import { Notify } from 'notiflix';
+
+// Components
+import { Loader } from 'components';
 
 // Styles
 import s from './AddProductForm.module.scss';
@@ -22,6 +26,7 @@ export default function AddProductForm() {
 
   // Dispatch
   const dispatch = useDispatch();
+  const isLoadingProducts = useSelector(productsSelectors.isLoadingProducts);
 
   // handlers
   const handleOnChangeFile = e => {
@@ -145,7 +150,11 @@ export default function AddProductForm() {
           />
         </label>
         <button className={s.button} onClick={handleOnSubmit}>
-          Add product
+          {isLoadingProducts ? (
+            <Loader height={'20'} width={'20'} />
+          ) : (
+            'Add product'
+          )}
         </button>
       </form>
     </div>

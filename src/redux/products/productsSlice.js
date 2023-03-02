@@ -3,7 +3,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import productsOperations from './productsOperations';
-const { addProduct } = productsOperations;
+const { addProduct, getAllProducts } = productsOperations;
 
 const initialState = {
   products: [],
@@ -27,9 +27,17 @@ export const financeSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
+      // ADD PRODUCT
       .addCase(addProduct.pending, handlePending)
       .addCase(addProduct.rejected, handleRejected)
       .addCase(addProduct.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.isLoading = false;
+      })
+      // GET ALL PRODUCTS
+      .addCase(getAllProducts.pending, handlePending)
+      .addCase(getAllProducts.rejected, handleRejected)
+      .addCase(getAllProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.isLoading = false;
       });

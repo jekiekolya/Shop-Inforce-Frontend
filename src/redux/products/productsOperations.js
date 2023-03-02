@@ -56,7 +56,21 @@ const addProduct = createAsyncThunk(
   }
 );
 
+const getAllProducts = createAsyncThunk(
+  'products/getAll',
+  async (_, { rejectWithValue }) => {
+    try {
+      const products = await axiosBaseUrl.get('/products');
+      return products.data.data.products;
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 const productsOperations = {
   addProduct,
+  getAllProducts,
 };
 export default productsOperations;
