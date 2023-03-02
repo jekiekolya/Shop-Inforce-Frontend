@@ -2,8 +2,9 @@
 import { useState } from 'react';
 
 // Redux
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import productsOperations from 'redux/products/productsOperations';
+import { productsSelectors } from 'redux/products/productsSelectors';
 
 // Libraries
 import { Notify } from 'notiflix';
@@ -14,7 +15,9 @@ import InputField from 'components/InputField/InputField';
 // Styles
 import s from './EditProductForm.module.scss';
 
-export default function EditProductForm({ product }) {
+export default function EditProductForm() {
+  const product = useSelector(productsSelectors.currentProduct);
+
   const [imgProduct, setImgProduct] = useState('');
   const [imgProductFile, setImgProductFile] = useState(null);
   const [productName, setProductName] = useState(product.name);

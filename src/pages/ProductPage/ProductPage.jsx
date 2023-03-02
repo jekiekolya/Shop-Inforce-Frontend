@@ -53,7 +53,7 @@ export default function ProductPage() {
           </div>
         )}
       </PageWrapper>
-      {showModalEditProduct && <ModalEditProduct product={product} />}
+      {showModalEditProduct && <ModalEditProduct />}
     </>
   );
 }
