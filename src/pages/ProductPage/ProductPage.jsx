@@ -5,14 +5,14 @@ import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { productsSelectors } from 'redux/products/productsSelectors';
 import productsOperations from 'redux/products/productsOperations';
-import { modalSelectors } from 'redux/modal/modalSelectors';
+// import { modalSelectors } from 'redux/modal/modalSelectors';
 import { toggleShowModalEditProduct } from 'redux/modal/modalSlice';
 
 // Components
 import PageWrapper from 'components/PageWrapper/PageWrapper';
 import ProductInfo from 'components/ProductInfo/ProductInfo';
 import CommentsList from 'components/CommentsList/CommentsList';
-import ModalEditProduct from 'components/ModalWindow/ModalEditProduct/ModalEditProduct';
+// import ModalEditProduct from 'components/ModalWindow/ModalEditProduct/ModalEditProduct';
 
 // Styles
 import s from './ProductPage.module.scss';
@@ -20,7 +20,7 @@ import s from './ProductPage.module.scss';
 export default function ProductPage() {
   const product = useSelector(productsSelectors.currentProduct);
   const dispatch = useDispatch();
-  const showModalEditProduct = useSelector(modalSelectors.showModalEditProduct);
+  // const showModalEditProduct = useSelector(modalSelectors.showModalEditProduct);
 
   // Get product Id
   const location = useLocation();
@@ -53,7 +53,7 @@ export default function ProductPage() {
           </div>
         )}
       </PageWrapper>
-      {showModalEditProduct && <ModalEditProduct product={product} />}
+      {/* {showModalEditProduct && <ModalEditProduct product={product} />} */}
     </>
   );
 }
