@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   showModalAddProduct: false,
-  // showModalLogout: false,
+  showModalDeleteProduct: false,
+  deletedProductId: null,
 };
 
 const modalSlice = createSlice({
@@ -12,11 +13,18 @@ const modalSlice = createSlice({
     toggleShowModalAddProduct(state, action) {
       state.showModalAddProduct = action.payload;
     },
-    // toggleShowModalLogout(state, action) {
-    //   state.showModalLogout = action.payload;
-    // },
+    toggleShowModalDeleteProduct(state, action) {
+      state.showModalDeleteProduct = action.payload;
+    },
+    setDeletedProductId(state, action) {
+      state.deletedProductId = action.payload;
+    },
   },
 });
 
 export const modalReducer = modalSlice.reducer;
-export const { toggleShowModalAddProduct } = modalSlice.actions;
+export const {
+  toggleShowModalAddProduct,
+  toggleShowModalDeleteProduct,
+  setDeletedProductId,
+} = modalSlice.actions;

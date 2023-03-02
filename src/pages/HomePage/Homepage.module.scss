@@ -10,7 +10,7 @@
   text-align: center;
 }
 
-.button {
+.buttonAdd {
   position: absolute;
   top: 50%;
   right: 0;
@@ -23,7 +23,7 @@
   transform: translateY(-50%);
 
   background-color: var(--text-green-color);
-  border: 1px solid var(--border-color);
+  border: 0px;
   border-radius: 4px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -33,3 +33,29 @@
     background-color: rgb(35, 179, 147);
   }
 }
+
+.dropWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+
+.buttonDrop {
+  padding: 13px 20px;
+
+  font-size: 16px;
+  letter-spacing: 0.1em;
+
+  color: white;
+
+  background-color: var(--text-red-color);
+  border: 0px;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+

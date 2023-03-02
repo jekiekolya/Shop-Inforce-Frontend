@@ -1,0 +1,41 @@
+.title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.desc {
+  margin-bottom: 60px;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.buttonWrapper button {
+  padding: 10px 60px;
+
+  height: 50px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.buttonConfirm {
+  background-color: var(--text-green-color);
+  &:active {
+    background-color: rgb(35, 179, 147);
+  }
+}
+
+.buttonCancel {
+  background-color: var(--text-red-color);
+
+  &:active {
+    background-color: rgb(204, 37, 59);;
+  }
+}

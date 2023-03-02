@@ -9,6 +9,7 @@
 }
 
 .item {
+  position: relative;
   width: calc((100% - 45px) / 4);
 
   background-color: var(--background-white-color);
@@ -41,3 +42,25 @@
   text-align: center;
 }
 
+.buttonDelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: -8px;
+  right: -8px;
+
+  width: 30px;
+  height: 30px;
+
+  background-color: var(--text-red-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.productCount {
+  padding-bottom: 5px;
+  text-align: right;
+}

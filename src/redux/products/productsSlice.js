@@ -3,12 +3,11 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import productsOperations from './productsOperations';
-const { addProduct, getAllProducts } = productsOperations;
+const { addProduct, getAllProducts, deleteProductById } = productsOperations;
 
 const initialState = {
   products: [],
-  data: [],
-  totalQuantityTransactions: 0,
+  sortedValue: 'name',
   isLoading: false,
   error: null,
 };
@@ -22,9 +21,14 @@ const handleRejected = (state, action) => {
   state.error = action.payload;
 };
 
-export const financeSlice = createSlice({
-  name: 'finance',
+export const productsSlice = createSlice({
+  name: 'products',
   initialState,
+  reducers: {
+    setSortedValue(state, action) {
+      state.sortedValue = action.payload;
+    },
+  },
   extraReducers: builder => {
     builder
       // ADD PRODUCT
@@ -40,6 +44,13 @@ export const financeSlice = createSlice({
       .addCase(getAllProducts.fulfilled, (state, action) => {
         state.products = action.payload;
         state.isLoading = false;
+      })
+      // DELETE PRODUCT
+      .addCase(deleteProductById.pending, handlePending)
+      .addCase(deleteProductById.rejected, handleRejected)
+      .addCase(deleteProductById.fulfilled, (state, action) => {
+        state.products = action.payload;
+        state.isLoading = false;
       });
   },
 });
@@ -51,5 +62,7 @@ const persistConfig = {
 
 export const persistedProductsReducer = persistReducer(
   persistConfig,
-  financeSlice.reducer
+  productsSlice.reducer
 );
+
+export const { setSortedValue } = productsSlice.actions;

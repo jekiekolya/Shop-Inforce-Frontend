@@ -1,0 +1,19 @@
+@import '../../assets/styles/index.scss';
+
+
+.list {
+  width: 100%;
+  background-color: var(--text-red-color);
+
+  position: relative;
+  z-index: 100;
+
+  border-radius: 5px;
+}
+
+.item {
+  padding: 10px 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+}

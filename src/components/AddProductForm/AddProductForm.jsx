@@ -87,7 +87,6 @@ export default function AddProductForm() {
 
   return (
     <div className={s.formWrapper}>
-      <h2 className={s.title}>Add Product</h2>
       <form encType="multipart/form-data">
         <label className={s.label}>
           <p className={s.inputTitle}>Product photo</p>

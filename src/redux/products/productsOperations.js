@@ -2,7 +2,10 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { Notify } from 'notiflix';
 
 import { axiosBaseUrl } from '../settingsAxios';
-import { toggleShowModalAddProduct } from 'redux/modal/modalSlice';
+import {
+  toggleShowModalAddProduct,
+  toggleShowModalDeleteProduct,
+} from 'redux/modal/modalSlice';
 
 const addProduct = createAsyncThunk(
   'products/add',
@@ -47,7 +50,7 @@ const addProduct = createAsyncThunk(
       const newProducts = [...oldProducts, product.data.data.addedProduct];
 
       dispatch(toggleShowModalAddProduct(false));
-      Notify.success('Product succesfully added');
+      Notify.success('Product successfully added');
       return newProducts;
     } catch (e) {
       Notify.failure(e.message);
@@ -69,8 +72,29 @@ const getAllProducts = createAsyncThunk(
   }
 );
 
+const deleteProductById = createAsyncThunk(
+  'products/deleteById',
+  async (id, { rejectWithValue, getState, dispatch }) => {
+    try {
+      await axiosBaseUrl.delete(`/products/${id}`);
+
+      const oldProducts = getState().products.products;
+      const newProducts = oldProducts.filter(item => item._id !== id);
+
+      dispatch(toggleShowModalDeleteProduct(false));
+      Notify.success('Product successfully deleted');
+
+      return newProducts;
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 const productsOperations = {
   addProduct,
   getAllProducts,
+  deleteProductById,
 };
 export default productsOperations;
