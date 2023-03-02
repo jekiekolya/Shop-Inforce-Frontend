@@ -24,6 +24,14 @@ export default function ProductList() {
   const sortedValue = useSelector(productsSelectors.sortedValue);
   const dispatch = useDispatch();
 
+  const showModalDeleteProduct = useSelector(
+    modalSelectors.showModalDeleteProduct
+  );
+
+  useEffect(() => {
+    dispatch(productsOperations.getAllProducts());
+  }, [dispatch]);
+
   const sortedProducts = [...products].sort((a, b) => {
     if (sortedValue === 'name') {
       return a.name.localeCompare(b.name);
@@ -34,14 +42,6 @@ export default function ProductList() {
       return 1;
     }
   });
-
-  useEffect(() => {
-    dispatch(productsOperations.getAllProducts());
-  }, [dispatch]);
-
-  const showModalDeleteProduct = useSelector(
-    modalSelectors.showModalDeleteProduct
-  );
 
   // Handlers
   const handleDeleteBtn = id => {
