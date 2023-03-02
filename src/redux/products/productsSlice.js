@@ -3,10 +3,12 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import productsOperations from './productsOperations';
-const { addProduct, getAllProducts, deleteProductById } = productsOperations;
+const { addProduct, getAllProducts, deleteProductById, getProductById } =
+  productsOperations;
 
 const initialState = {
   products: [],
+  currentProduct: null,
   sortedValue: 'name',
   isLoading: false,
   error: null,
@@ -45,6 +47,14 @@ export const productsSlice = createSlice({
         state.products = action.payload;
         state.isLoading = false;
       })
+      // GET PRODUCT
+      .addCase(getProductById.pending, handlePending)
+      .addCase(getProductById.rejected, handleRejected)
+      .addCase(getProductById.fulfilled, (state, action) => {
+        state.currentProduct = action.payload;
+        state.isLoading = false;
+      })
+
       // DELETE PRODUCT
       .addCase(deleteProductById.pending, handlePending)
       .addCase(deleteProductById.rejected, handleRejected)

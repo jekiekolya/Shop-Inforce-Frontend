@@ -72,6 +72,20 @@ const getAllProducts = createAsyncThunk(
   }
 );
 
+const getProductById = createAsyncThunk(
+  'products/getById',
+  async (id, { rejectWithValue }) => {
+    try {
+      console.log('id', id);
+      const products = await axiosBaseUrl.get(`/products/${id}`);
+      return products.data.data.product;
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 const deleteProductById = createAsyncThunk(
   'products/deleteById',
   async (id, { rejectWithValue, getState, dispatch }) => {
@@ -96,5 +110,6 @@ const productsOperations = {
   addProduct,
   getAllProducts,
   deleteProductById,
+  getProductById,
 };
 export default productsOperations;
