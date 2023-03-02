@@ -9,11 +9,11 @@ import { useDispatch } from 'react-redux';
 import { BsXLg } from 'react-icons/bs';
 
 // Styles
-import s from './ModalUniversal.module.scss';
+import s from './ModalUniversalEdit.module.scss';
 
 const modalRoot = document.querySelector('#modal-root');
 
-const ModalUniversal = ({ toggleAction, children }) => {
+const ModalUniversalEdit = ({ toggleAction, children }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -60,4 +60,4 @@ const ModalUniversal = ({ toggleAction, children }) => {
   );
 };
 
-export default ModalUniversal;
+export default ModalUniversalEdit;
