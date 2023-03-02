@@ -7,6 +7,8 @@ import {
   toggleShowModalDeleteProduct,
 } from 'redux/modal/modalSlice';
 
+import getFormatDataForComment from 'redux/helpers/getDateFormat';
+
 const addProduct = createAsyncThunk(
   'products/add',
   async (credentials, { rejectWithValue, getState, dispatch }) => {
@@ -76,7 +78,6 @@ const getProductById = createAsyncThunk(
   'products/getById',
   async (id, { rejectWithValue }) => {
     try {
-      console.log('id', id);
       const products = await axiosBaseUrl.get(`/products/${id}`);
       return products.data.data.product;
     } catch (e) {
@@ -106,10 +107,48 @@ const deleteProductById = createAsyncThunk(
   }
 );
 
+const addCommentByProductId = createAsyncThunk(
+  'products/addCommentByProductId',
+  async (credentials, { rejectWithValue, dispatch }) => {
+    try {
+      const { comment, productId } = credentials;
+      const data = {
+        description: comment,
+        date: getFormatDataForComment(),
+      };
+
+      await axiosBaseUrl.post(`/products/comment/${productId}`, data);
+
+      dispatch(getProductById(productId));
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
+const deleteCommentByProductId = createAsyncThunk(
+  'products/deleteCommentByProductId',
+  async (credentials, { rejectWithValue, dispatch }) => {
+    try {
+      const { commentId, productId } = credentials;
+
+      await axiosBaseUrl.delete(`/products/comment/${productId}/${commentId}`);
+
+      dispatch(getProductById(productId));
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 const productsOperations = {
   addProduct,
   getAllProducts,
   deleteProductById,
   getProductById,
+  addCommentByProductId,
+  deleteCommentByProductId,
 };
 export default productsOperations;

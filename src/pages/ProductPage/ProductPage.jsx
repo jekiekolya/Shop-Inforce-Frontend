@@ -33,7 +33,7 @@ export default function ProductPage() {
         <div className={s.productWrapper}>
           <h1 className={s.title}>{product.name}</h1>
           <ProductInfo product={product} />
-          <CommentsList comments={product.comments} />
+          <CommentsList comments={product.comments} productId={id} />
         </div>
       )}
     </PageWrapper>
