@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/Shop-Inforce-Frontend/static/css/main.67088759.css",
-    "main.js": "/Shop-Inforce-Frontend/static/js/main.9ba86723.js",
-    "static/css/887.1fd5e9ef.chunk.css": "/Shop-Inforce-Frontend/static/css/887.1fd5e9ef.chunk.css",
+    "main.js": "/Shop-Inforce-Frontend/static/js/main.7af0433e.js",
+    "static/css/887.e1e8affe.chunk.css": "/Shop-Inforce-Frontend/static/css/887.e1e8affe.chunk.css",
     "static/js/887.b4559968.chunk.js": "/Shop-Inforce-Frontend/static/js/887.b4559968.chunk.js",
-    "static/css/982.d4351560.chunk.css": "/Shop-Inforce-Frontend/static/css/982.d4351560.chunk.css",
+    "static/css/982.d07ff102.chunk.css": "/Shop-Inforce-Frontend/static/css/982.d07ff102.chunk.css",
     "static/js/982.8c20250e.chunk.js": "/Shop-Inforce-Frontend/static/js/982.8c20250e.chunk.js",
     "static/js/256.76b71649.chunk.js": "/Shop-Inforce-Frontend/static/js/256.76b71649.chunk.js",
     "static/js/726.c558576d.chunk.js": "/Shop-Inforce-Frontend/static/js/726.c558576d.chunk.js",
     "static/media/logo.png": "/Shop-Inforce-Frontend/static/media/logo.acb7ed5ae91ac1629793.png",
     "index.html": "/Shop-Inforce-Frontend/index.html",
     "main.67088759.css.map": "/Shop-Inforce-Frontend/static/css/main.67088759.css.map",
-    "main.9ba86723.js.map": "/Shop-Inforce-Frontend/static/js/main.9ba86723.js.map",
-    "887.1fd5e9ef.chunk.css.map": "/Shop-Inforce-Frontend/static/css/887.1fd5e9ef.chunk.css.map",
+    "main.7af0433e.js.map": "/Shop-Inforce-Frontend/static/js/main.7af0433e.js.map",
+    "887.e1e8affe.chunk.css.map": "/Shop-Inforce-Frontend/static/css/887.e1e8affe.chunk.css.map",
     "887.b4559968.chunk.js.map": "/Shop-Inforce-Frontend/static/js/887.b4559968.chunk.js.map",
-    "982.d4351560.chunk.css.map": "/Shop-Inforce-Frontend/static/css/982.d4351560.chunk.css.map",
+    "982.d07ff102.chunk.css.map": "/Shop-Inforce-Frontend/static/css/982.d07ff102.chunk.css.map",
     "982.8c20250e.chunk.js.map": "/Shop-Inforce-Frontend/static/js/982.8c20250e.chunk.js.map",
     "256.76b71649.chunk.js.map": "/Shop-Inforce-Frontend/static/js/256.76b71649.chunk.js.map",
     "726.c558576d.chunk.js.map": "/Shop-Inforce-Frontend/static/js/726.c558576d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.67088759.css",
-    "static/js/main.9ba86723.js"
+    "static/js/main.7af0433e.js"
   ]
 }
