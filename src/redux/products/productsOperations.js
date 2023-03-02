@@ -5,6 +5,7 @@ import { axiosBaseUrl } from '../settingsAxios';
 import {
   toggleShowModalAddProduct,
   toggleShowModalDeleteProduct,
+  toggleShowModalEditProduct,
 } from 'redux/modal/modalSlice';
 
 import getFormatDataForComment from 'redux/helpers/getDateFormat';
@@ -107,6 +108,54 @@ const deleteProductById = createAsyncThunk(
   }
 );
 
+const editProductById = createAsyncThunk(
+  'products/editById',
+  async (credentials, { rejectWithValue, dispatch }) => {
+    try {
+      let {
+        imgProductFile,
+        imageUrl,
+        productName,
+        productCount,
+        productWidth,
+        productHeight,
+        productWeight,
+        productId,
+      } = credentials;
+
+      if (imgProductFile) {
+        const res = await axiosBaseUrl.post(
+          '/products/product_img',
+          imgProductFile,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
+          }
+        );
+        imageUrl = res.data.data.productImgURL;
+      }
+
+      await axiosBaseUrl.patch(`/products/${productId}`, {
+        imageUrl,
+        name: productName,
+        count: productCount,
+        size: {
+          width: productWidth,
+          height: productHeight,
+        },
+        weight: productWeight,
+      });
+
+      dispatch(getProductById(productId));
+      dispatch(toggleShowModalEditProduct(false));
+    } catch (e) {
+      Notify.failure(e.message);
+      return rejectWithValue(e.message);
+    }
+  }
+);
+
 const addCommentByProductId = createAsyncThunk(
   'products/addCommentByProductId',
   async (credentials, { rejectWithValue, dispatch }) => {
@@ -150,5 +199,6 @@ const productsOperations = {
   getProductById,
   addCommentByProductId,
   deleteCommentByProductId,
+  editProductById,
 };
 export default productsOperations;
