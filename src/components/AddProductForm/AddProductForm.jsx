@@ -37,7 +37,7 @@ export default function AddProductForm() {
     }
 
     const data = new FormData();
-    data.append('avatar', productImgFile);
+    data.append('product_img', productImgFile);
 
     setImgProduct(productImg);
     setImgProductFile(data);
@@ -59,7 +59,9 @@ export default function AddProductForm() {
     setProductWeight(e.target.value);
   };
 
-  const handleOnSubmit = () => {
+  const handleOnSubmit = e => {
+    e.preventDefault();
+
     const dataForm = {
       imgProductFile,
       productName,
@@ -90,7 +92,7 @@ export default function AddProductForm() {
           />
         </label>
       </form>
-      <form className={s.form}>
+      <form className={s.form} autoComplete>
         <label className={s.label}>
           <p>Product Name</p>
           <input
@@ -142,11 +144,10 @@ export default function AddProductForm() {
             value={productWeight}
           />
         </label>
+        <button className={s.button} onClick={handleOnSubmit}>
+          Add product
+        </button>
       </form>
-
-      <button className={s.button} onClick={handleOnSubmit}>
-        Add product
-      </button>
     </div>
   );
 }

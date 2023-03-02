@@ -1,15 +1,23 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { axiosBaseUrl } from '../settingsAxios';
 import { Notify } from 'notiflix';
+
+import { axiosBaseUrl } from '../settingsAxios';
+import { toggleShowModalAddProduct } from 'redux/modal/modalSlice';
 
 const addProduct = createAsyncThunk(
   'products/add',
-  async (credentials, { rejectWithValue }) => {
+  async (credentials, { rejectWithValue, getState, dispatch }) => {
     try {
-      const { imgProductFile } = credentials;
-      console.log('credentials', credentials);
+      const {
+        imgProductFile,
+        productName,
+        productCount,
+        productWidth,
+        productHeight,
+        productWeight,
+      } = credentials;
 
-      const imgUrl = await axiosBaseUrl.patch(
+      const res = await axiosBaseUrl.post(
         '/products/product_img',
         imgProductFile,
         {
@@ -18,10 +26,29 @@ const addProduct = createAsyncThunk(
           },
         }
       );
+      const imgUrl = res.data.data.productImgURL;
 
-      console.log('imgUrl', imgUrl);
+      const data = {
+        imageUrl: imgUrl,
+        name: productName,
+        count: productCount,
+        size: {
+          width: productWidth,
+          height: productHeight,
+        },
+        weight: productWeight,
+      };
 
-      return 1;
+      const product = await axiosBaseUrl.post('/products', {
+        ...data,
+      });
+
+      const oldProducts = getState().products.products;
+      const newProducts = [...oldProducts, product.data.data.addedProduct];
+
+      dispatch(toggleShowModalAddProduct(false));
+      Notify.success('Product succesfully added');
+      return newProducts;
     } catch (e) {
       Notify.failure(e.message);
       return rejectWithValue(e.message);
