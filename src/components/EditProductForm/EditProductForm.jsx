@@ -83,8 +83,6 @@ export default function EditProductForm() {
       Notify.failure('All fields are required');
       return;
     }
-
-    console.log('dataForm', dataForm);
     dispatch(productsOperations.editProductById(dataForm));
   };
 

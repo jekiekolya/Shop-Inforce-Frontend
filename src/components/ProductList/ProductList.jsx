@@ -36,7 +36,6 @@ export default function ProductList() {
     if (sortedValue === 'name') {
       return a.name.localeCompare(b.name);
     } else if (sortedValue === 'count') {
-      console.log('a.count', a.count);
       return b.count - a.count;
     } else {
       return 1;
