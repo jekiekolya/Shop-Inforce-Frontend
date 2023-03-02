@@ -11,6 +11,7 @@ import { Notify } from 'notiflix';
 
 // Components
 import { Loader } from 'components';
+import InputField from 'components/InputField/InputField';
 
 // Styles
 import s from './AddProductForm.module.scss';
@@ -88,7 +89,8 @@ export default function AddProductForm() {
     <div className={s.formWrapper}>
       <h2 className={s.title}>Add Product</h2>
       <form encType="multipart/form-data">
-        <label className={s.user}>
+        <label className={s.label}>
+          <p className={s.inputTitle}>Product photo</p>
           <input
             type="file"
             name="productImg"
@@ -97,58 +99,48 @@ export default function AddProductForm() {
           />
         </label>
       </form>
-      <form className={s.form} autoComplete>
-        <label className={s.label}>
-          <p>Product Name</p>
-          <input
-            type="text"
-            name="productName"
-            onChange={handleOnChangeName}
-            value={productName}
-          />
-        </label>
-        <label className={s.label}>
-          <p>Count</p>
-          <input
-            type="number"
-            name="count"
-            onChange={handleOnChangeCount}
-            value={productCount}
-          />
-        </label>
+      <form className={s.form}>
+        <InputField
+          inputTitle="Product Name"
+          type="text"
+          name="productName"
+          onChange={handleOnChangeName}
+          value={productName}
+        />
+        <InputField
+          inputTitle="Count"
+          type="number"
+          name="count"
+          onChange={handleOnChangeCount}
+          value={productCount}
+        />
 
         <div>
-          <p>Size</p>
+          <p className={s.sizeTitle}>Size:</p>
           <div className={s.sizeWrapper}>
-            <label className={s.label}>
-              <p>Width</p>
-              <input
-                type="number"
-                name="width"
-                onChange={handleOnChangeWidth}
-                value={productWidth}
-              />
-            </label>
-            <label className={s.label}>
-              <p>Height</p>
-              <input
-                type="number"
-                name="height"
-                onChange={handleOnChangeHeight}
-                value={productHeight}
-              />
-            </label>
+            <InputField
+              inputTitle="Width"
+              type="number"
+              name="width"
+              onChange={handleOnChangeWidth}
+              value={productWidth}
+            />
+            <InputField
+              inputTitle="Height"
+              type="number"
+              name="height"
+              onChange={handleOnChangeHeight}
+              value={productHeight}
+            />
           </div>
         </div>
-        <label className={s.label}>
-          <p>Weight</p>
-          <input
-            type="text"
-            name="weight"
-            onChange={handleOnChangeWeight}
-            value={productWeight}
-          />
-        </label>
+        <InputField
+          inputTitle="Weight"
+          type="text"
+          name="weight"
+          onChange={handleOnChangeWeight}
+          value={productWeight}
+        />
         <button className={s.button} onClick={handleOnSubmit}>
           {isLoadingProducts ? (
             <Loader height={'20'} width={'20'} />
