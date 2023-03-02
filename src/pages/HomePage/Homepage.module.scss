@@ -16,9 +16,9 @@
   right: 0;
 
   margin-bottom: 20px;
-  padding: 13px 94px;
+  padding: 8px 16px;
 
-  height: 50px;
+  height: 40px;
 
   transform: translateY(-50%);
 
@@ -32,6 +32,15 @@
   &:active {
     background-color: rgb(35, 179, 147);
   }
+
+    @include mq(tab) {
+      padding: 10px 20px;
+    }
+  
+    @include mq(desk) {
+      height: 50px;
+      padding: 13px 94px;
+    }
 }
 
 .dropWrapper {
@@ -40,12 +49,16 @@
   gap: 5px;
 
   position: absolute;
-  top: 20px;
+  top: 50%;
   left: 0;
+
+  transform: translateY(-50%);
 }
 
 .buttonDrop {
-  padding: 13px 20px;
+  padding: 5px 5px;
+
+  height: 40px;
 
   font-size: 16px;
   letter-spacing: 0.1em;
@@ -57,5 +70,15 @@
   border-radius: 4px;
 
   cursor: pointer;
+
+
+  @include mq(tab) {
+      padding: 10px 20px;
+    }
+  
+    @include mq(desk) {
+      height: 50px;
+      padding: 13px 20px;
+    }
 }
 

@@ -2,10 +2,16 @@
 
 .infoWrapper {
   display: flex;
-  gap: 50px
+  gap: 50px;
+
+@include mq(mob-only) {
+      flex-direction: column;
+    }
 }
 
 .img {
+
+
   width: 550px;
   height: 400px;
 

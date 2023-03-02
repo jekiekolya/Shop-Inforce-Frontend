@@ -1,3 +1,5 @@
+@import '../../assets/styles/index.scss';
+
 .productWrapper {
   padding-bottom: 40px;
 }
@@ -18,7 +20,7 @@
   right: 0;
 
   margin-bottom: 20px;
-  padding: 13px 94px;
+  padding: 8px 16px;
 
   height: 50px;
 
@@ -34,4 +36,13 @@
   &:active {
     background-color: rgb(35, 179, 147);
   }
+
+    @include mq(tab) {
+      padding: 10px 20px;
+    }
+  
+    @include mq(desk) {
+      height: 50px;
+      padding: 13px 94px;
+    }
 }
