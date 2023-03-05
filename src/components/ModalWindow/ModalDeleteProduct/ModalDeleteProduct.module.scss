@@ -26,8 +26,9 @@
 
 .buttonConfirm {
   background-color: var(--text-green-color);
-  &:active {
-    background-color: rgb(35, 179, 147);
+  &:hover,
+  :focus {
+    background-color: var(--background-green-hover-color);
   }
 }
 

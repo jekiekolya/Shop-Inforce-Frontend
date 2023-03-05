@@ -61,8 +61,14 @@
   padding: 3px 10px;
 
   background: var(--text-green-color);
+  color: #fff;
   border: none;
   border-radius: 5px;
+
+  &:hover,
+  :focus {
+    background-color: var(--background-green-hover-color);
+  }
 }
 
 .buttonDelete {
