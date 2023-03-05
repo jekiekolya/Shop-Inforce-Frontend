@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // Redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,14 +23,11 @@ export default function ProductPage() {
   const showModalEditProduct = useSelector(modalSelectors.showModalEditProduct);
 
   // Get product Id
-  const location = useLocation();
-  const pathName = [...location.pathname];
-  pathName.shift();
-  const id = pathName.join('');
+  const { productId } = useParams();
 
   useEffect(() => {
-    dispatch(productsOperations.getProductById(id));
-  }, [dispatch, id]);
+    dispatch(productsOperations.getProductById(productId));
+  }, [dispatch, productId]);
 
   // Handlers
   const handleEditModalOpen = () => {
@@ -49,7 +46,7 @@ export default function ProductPage() {
               </button>
             </div>
             <ProductInfo product={product} />
-            <CommentsList comments={product.comments} productId={id} />
+            <CommentsList comments={product.comments} productId={productId} />
           </div>
         )}
       </PageWrapper>
