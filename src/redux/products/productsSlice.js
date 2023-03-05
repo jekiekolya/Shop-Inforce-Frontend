@@ -11,6 +11,7 @@ const initialState = {
   currentProduct: null,
   sortedValue: 'name',
   isLoading: false,
+  isLoadingAddProduct: false,
   error: null,
 };
 
@@ -34,12 +35,18 @@ export const productsSlice = createSlice({
   extraReducers: builder => {
     builder
       // ADD PRODUCT
-      .addCase(addProduct.pending, handlePending)
-      .addCase(addProduct.rejected, handleRejected)
+      .addCase(addProduct.pending, state => {
+        state.isLoadingAddProduct = true;
+      })
+      .addCase(addProduct.rejected, (state, action) => {
+        state.isLoadingAddProduct = false;
+        state.error = action.payload;
+      })
       .addCase(addProduct.fulfilled, (state, action) => {
         state.products = action.payload;
         state.isLoading = false;
       })
+
       // GET ALL PRODUCTS
       .addCase(getAllProducts.pending, handlePending)
       .addCase(getAllProducts.rejected, handleRejected)
@@ -47,6 +54,7 @@ export const productsSlice = createSlice({
         state.products = action.payload;
         state.isLoading = false;
       })
+
       // GET PRODUCT
       .addCase(getProductById.pending, handlePending)
       .addCase(getProductById.rejected, handleRejected)

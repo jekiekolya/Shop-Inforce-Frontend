@@ -27,7 +27,9 @@ export default function AddProductForm() {
 
   // Dispatch
   const dispatch = useDispatch();
-  const isLoadingProducts = useSelector(productsSelectors.isLoadingProducts);
+  const isLoadingAddProduct = useSelector(
+    productsSelectors.isLoadingAddProduct
+  );
 
   // handlers
   const handleOnChangeFile = e => {
@@ -141,7 +143,7 @@ export default function AddProductForm() {
           value={productWeight}
         />
         <button className={s.button} onClick={handleOnSubmit}>
-          {isLoadingProducts ? (
+          {isLoadingAddProduct ? (
             <Loader height={'20'} width={'20'} />
           ) : (
             'Add product'
