@@ -42,16 +42,18 @@ export default function ProductPage() {
         {isLoading ? (
           <Loader center />
         ) : (
-          <div className={s.productWrapper}>
-            <div className={s.titleWrapper}>
-              <h1 className={s.title}>{product.name}</h1>
-              <button className={s.buttonEdit} onClick={handleEditModalOpen}>
-                Edit Product
-              </button>
+          product && (
+            <div className={s.productWrapper}>
+              <div className={s.titleWrapper}>
+                <h1 className={s.title}>{product.name}</h1>
+                <button className={s.buttonEdit} onClick={handleEditModalOpen}>
+                  Edit Product
+                </button>
+              </div>
+              <ProductInfo product={product} />
+              <CommentsList comments={product.comments} productId={productId} />
             </div>
-            <ProductInfo product={product} />
-            <CommentsList comments={product.comments} productId={productId} />
-          </div>
+          )
         )}
       </PageWrapper>
       {showModalEditProduct && <ModalEditProduct />}
