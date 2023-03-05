@@ -3,7 +3,7 @@ import { Circles } from 'react-loader-spinner';
 const Loader = ({
   height = '100',
   width = '100',
-  color = '#4A56E2',
+  color = 'rgb(235, 40, 65)',
   center,
 }) => {
   const style = {
