@@ -1,7 +1,5 @@
-
-
 .formWrapper {
-  width: 100%
+  width: 100%;
 }
 
 .form {
@@ -21,26 +19,22 @@
 
 .button {
   display: block;
-    padding: 10px 20px;
-  
-    margin: 30px auto 0px;
-  
-  
-    background-color: var(--text-green-color);
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
+  padding: 10px 20px;
 
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-  
-    &:active {
-      background-color: rgb(35, 179, 147);
-    }
+  margin: 30px auto 0px;
+
+  background-color: var(--text-green-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  &:active {
+    background-color: rgb(35, 179, 147);
+  }
 }
 
 .sizeTitle {
   margin-bottom: 5px;
 }
-
-

@@ -1,6 +1,5 @@
 @import '../../assets/styles/index.scss';
 
-
 .list {
   width: 100%;
   background-color: var(--text-red-color);
@@ -16,4 +15,10 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+
+  &:hover,
+  :focus {
+    background-color: var(--background-red-hover-color);
+    border-radius: 5px;
+  }
 }
